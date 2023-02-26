@@ -28,12 +28,13 @@
         },
         methods:{
             submitForm(){
+              this.isSameEmail = true
                 this.formIsValid = true
                 if(this.email === '' || !this.email.includes('@') || this.message === ''){
                     this.formIsValid = false;
                     return;
                 }
-                if(this.email !== localStorage.getItem('email')){
+                if(this.email != localStorage.getItem('theUserEmail')){
                   this.isSameEmail = false;
                   return
                 }
@@ -44,7 +45,6 @@
                     coachId: this.$route.params.id
                 });
                 this.$router.replace('/coaches');
-
             }
         },
         watch:{
@@ -57,7 +57,12 @@
             if(newValue !== oldValue){
               this.formIsValid = true
             }
-          }
+          },
+          
+        },
+        created(){
+          console.log(localStorage.getItem('theUserEmail'))
+          
         }
     }
 </script>

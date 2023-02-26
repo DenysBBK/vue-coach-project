@@ -40,6 +40,13 @@ export default {
                 this.theErrorMessage = error.message
             }
         },
+        async loadUsers(){
+            try{
+                this.$store.dispatch('getAllUsers')
+            }catch(error){
+                this.theErrorMessage = error.message
+            }
+        },
         findNecessaryUser(){
             let fromLocalStorage = localStorage.getItem('theUserEmail')
             let choosen = this.getUsers.find(one => one.email === fromLocalStorage)
@@ -63,7 +70,7 @@ export default {
         
     },
     mounted(){
-        this.loadMessages()
+        this.loadUsers()
          this.webSoc = setInterval(()=>{
             this.loadMessages()
         }, 2000)
@@ -78,7 +85,6 @@ export default {
     }
     
 }
-
 </script>
 
 <style  scoped>
@@ -92,5 +98,4 @@ export default {
     color: white;
     align-self: flex-end;
   }
-
 </style>

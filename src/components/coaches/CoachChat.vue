@@ -67,5 +67,4 @@ export default{
     color: white;
     align-self: flex-start;
   }
-
 </style>

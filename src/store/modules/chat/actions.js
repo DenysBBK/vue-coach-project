@@ -22,7 +22,7 @@ export default{
         
         context.commit('theUsers', myUsers)
     },
-    async sendMessageForUser(context, payload){
+    async sendMessageForUser(_, payload){
         const newMessage = {
             type:payload.type,
             message: payload.message
