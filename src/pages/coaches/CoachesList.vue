@@ -75,7 +75,6 @@ export default{
     },
     created(){
         this.displayCoaches()
-        console.log(this.$store.getters['coaches/coaches'])
         
     },
     methods:{

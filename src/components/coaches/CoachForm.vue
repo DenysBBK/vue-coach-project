@@ -95,7 +95,7 @@ export default{
           this.rate.isValid = false;
           this.formIsValid = false;
         }
-        console.log(this.areas)
+       
         
         
           

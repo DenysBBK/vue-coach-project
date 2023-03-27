@@ -30,10 +30,6 @@ export default{
       this.$router.replace('/coaches')
     }
   },
-  created(){
-    console.log(this.isUserCoach)
-    
-  }
 }
 
 

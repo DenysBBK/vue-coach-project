@@ -59,10 +59,6 @@
           },
           
         },
-        created(){
-          console.log(localStorage.getItem('theUserEmail'))
-          
-        }
     }
 </script>
 
