@@ -41,7 +41,6 @@
                 this.$store.dispatch('requests/contactCoach', {
                     email: this.email,
                     message: this.message,
-                    //из роута я беру айдишку коуча, которому отправляю свой запрос
                     coachId: this.$route.params.id
                 });
                 this.$router.replace('/coaches');

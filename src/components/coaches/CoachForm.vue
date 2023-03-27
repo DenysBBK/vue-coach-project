@@ -70,7 +70,6 @@ export default{
         }
     },
     methods:{
-      //Мы принимаем как инпут любое из нашего дата, что угодно
       clearValidation(input){
         this[input].isValid = true
       },

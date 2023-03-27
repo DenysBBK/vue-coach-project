@@ -8,11 +8,6 @@
 </base-dialog>
     <base-card>
     <div class="chat-body" v-if="receivedMessages.length >=1 || isCoach">
-        <!-- <div id="chat-window">
-          <div class="message admin">Привет! Как я могу Вам помочь сегодня?</div>
-          <div class="message user">Здравствуйте, я бы хотел задать вопрос про продукт.</div>
-          <div class="message admin">Конечно, я готов ответить на Ваши вопросы.</div>
-        </div> -->
       <div class="the-chat">
         <ul id="chat-window" >
           <li v-for="message in receivedMessages"
@@ -24,9 +19,9 @@
           >{{ message.message }}</li>
         </ul>
       </div>
-        <div class="input-chat">
-          <input type="text" placeholder="Enter you message..." v-model="inputValue">
-          <button @click="sendMessage">Send</button>
+        <div class="input-chat" >
+          <input type="text" placeholder="Enter you message..." v-model="inputValue" @keydown.enter="sendMessage">
+          <button @click="sendMessage" >Send</button>
         </div>
       </div>
       <p v-if="receivedMessages.length <= 0">You have no messages right now </p>
@@ -107,9 +102,6 @@ export default{
   border-radius: 4px;
 }
   #chat-window {
-    
-    
-    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

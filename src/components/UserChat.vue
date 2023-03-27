@@ -33,7 +33,7 @@ export default {
         async loadMessages(){
             try{
                 this.findNecessaryUser()
-            this.$store.dispatch('getAllUsersMessages', {
+                await this.$store.dispatch('getAllUsersMessages', {
                 id:this.theUserId
             })
             }catch(error){
@@ -42,7 +42,7 @@ export default {
         },
         async loadUsers(){
             try{
-                this.$store.dispatch('getAllUsers')
+                await this.$store.dispatch('getAllUsers')
             }catch(error){
                 this.theErrorMessage = error.message
             }
@@ -51,14 +51,7 @@ export default {
             let fromLocalStorage = localStorage.getItem('theUserEmail')
             let choosen = this.getUsers.find(one => one.email === fromLocalStorage)
             this.theUserId = choosen.id
-        },
-        findNecessary(){
-            let fromLocalEmail = localStorage.getItem('email')
-            const my = this.getUsers.find(user => user.email === fromLocalEmail)
-            return my.id
-        }
-        
-        
+        },        
     },
     computed:{
         getMessages(){
@@ -78,12 +71,7 @@ export default {
     unmounted(){
         clearInterval(this.webSoc);
         
-    },
-    created(){
-        console.log(this.getUsers)
-        
-    }
-    
+    }    
 }
 </script>
 

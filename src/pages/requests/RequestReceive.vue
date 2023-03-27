@@ -52,7 +52,8 @@ export default{
     
     created(){
         this.loadAllRequests()
-        this.loadAllUserRequests()  
+        this.loadAllUserRequests();
+        
     },
     methods:{
        async loadAllRequests(){

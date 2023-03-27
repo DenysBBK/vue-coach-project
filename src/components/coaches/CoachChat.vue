@@ -29,7 +29,7 @@ export default{
         },
         async loadMessages(){
             try{
-                this.$store.dispatch('getAllUsersMessages', {
+                await this.$store.dispatch('getAllUsersMessages', {
                 id:this.$route.params.uid
             })
             }catch(error){

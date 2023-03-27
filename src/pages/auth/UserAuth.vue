@@ -25,8 +25,6 @@
 </template>
 
 <script>
-
-
     export default {
         data(){
             return{
@@ -67,8 +65,6 @@
                 this.isLoading = false 
             },
             switchBetweenForm(){
-                // if(this.mode === 'login')this.mode = 'signup'
-                // if(this.mode === 'signup')this.mode = 'login'
                 this.mode === 'login' ? this.mode = 'signup': this.mode = 'login'
             },
             handleError(){
@@ -86,7 +82,7 @@
             },
             switchModeButtonCaption(){
                 if(this.mode === 'login'){
-                    return 'Go to Sig Up'
+                    return 'Go to Sign Up'
                 } else{
                     return 'Go to Login'
                 } 
