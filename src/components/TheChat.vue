@@ -61,7 +61,10 @@ export default{
     handleError(){
                 this.chatError = null
             }
-  }
+  },
+  mounted(){
+            document.title = 'Chat'
+        }
   
 }
 </script>

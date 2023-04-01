@@ -52,6 +52,7 @@ export default{
         clearInterval(this.webSoc);
         
     },
+    
 }
     
 </script>

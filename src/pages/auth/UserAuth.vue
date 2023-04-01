@@ -16,7 +16,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" v-model.trim="password"/>
         </div>
-        <p v-if="!formIsValid">The password or email is invalid</p>
+        <p class="error" v-if="!formIsValid">The password or email is invalid</p>
         <base-button>{{ submitButtonCaption }}</base-button>
         <base-button type="button" mode="flat" @click="switchBetweenForm">{{ switchModeButtonCaption }}</base-button>
     </form>
@@ -33,7 +33,9 @@
                 formIsValid: true,
                 mode:'login',
                 isLoading: false,
-                theError: null
+                theError: null,
+                pageTitle:'Login'
+                
             }
         },
         methods:{
@@ -65,7 +67,14 @@
                 this.isLoading = false 
             },
             switchBetweenForm(){
-                this.mode === 'login' ? this.mode = 'signup': this.mode = 'login'
+                if(this.mode === 'login'){
+                    this.mode ='signup';
+                    document.title = 'Sign Up'
+                } else{
+                    this.mode ='login';
+                    document.title = 'Login'
+                }
+                // this.mode === 'login' ? this.mode = 'signup': this.mode = 'login'
             },
             handleError(){
                 this.theError = null
@@ -87,7 +96,11 @@
                     return 'Go to Login'
                 } 
             }
+        },
+        mounted(){
+            document.title = this.pageTitle
         }
+       
         
     }
 </script>
@@ -122,6 +135,9 @@ textarea:focus {
   border-color: #3d008d;
   background-color: #faf6ff;
   outline: none;
+}
+.error{
+    color: red;
 }
 
 

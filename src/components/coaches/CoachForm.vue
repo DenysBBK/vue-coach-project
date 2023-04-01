@@ -116,7 +116,10 @@ export default{
             
         },
         
-    }
+    },
+    mounted(){
+            document.title = 'Sign Up as Coach'
+        }
 }
 </script>
 <style scoped>

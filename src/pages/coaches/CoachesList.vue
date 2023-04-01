@@ -93,7 +93,10 @@ export default{
         handleTheError(){
             this.theError = null
         }
-    }
+    },
+    mounted(){
+            document.title = 'Coaches'
+        }
 }
     
 </script>

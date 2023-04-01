@@ -82,6 +82,9 @@ export default{
             return my.id
         }  
     },   
+    mounted(){
+            document.title = 'Requests'
+        }
 } 
 </script>
 
